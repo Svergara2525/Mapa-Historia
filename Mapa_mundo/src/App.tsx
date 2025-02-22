@@ -5,8 +5,11 @@ export const App: React.FC = () => {
     crs: L.CRS.Simple
   });
 
-  var bounds: [L.LatLng][L.LatLng] = [[0,0], [1000,1000]];
+  var bounds: [[number, number], [number, number]] = [[0, 0], [1000, 1000]];
   var image = L.imageOverlay('uqm_map_full.png', bounds).addTo(map);
 
-  return("hola mundo loool")
+  map.fitBounds(bounds);
+
+
+  return(<div id="map" style={{ height: '500px', width: '100%' }}></div>)
 }
